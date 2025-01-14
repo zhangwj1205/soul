@@ -1,131 +1,176 @@
-<p align="center" >
-    <a href="https://dromara.org"><img src="https://dromara.org/img/logo/soul.png" width="45%"></a>
+![Light Logo](https://raw.githubusercontent.com/apache/shenyu-website/main/static/img/logo-light.svg#gh-dark-mode-only)
+![Dark Logo](https://raw.githubusercontent.com/apache/shenyu-website/main/static/img/logo.svg#gh-light-mode-only)
+
+<p align="center">
+  <strong>Scalable, High Performance, Responsive API Gateway Solution for all MicroServices</strong>
 </p>
 <p align="center">
-  <strong>Scalable, High Performance, Responsive API Gateway Solution for all MicroSerivces</strong>
-</p>
-<p align="center">
-  <a href="https://dromara.org">https://dromara.org/</a>
+  <a href="https://shenyu.apache.org/">https://shenyu.apache.org/</a>
 </p>
 
 <p align="center">
-  English | <a href="https://github.com/dromara/soul/blob/master/README_CN.md">简体中文</a>
+  <a href="https://shenyu.apache.org/docs/index" >
+    <img src="https://img.shields.io/badge/document-English-blue.svg" alt="EN docs" />
+  </a>
+  <a href="https://shenyu.apache.org/zh/docs/index">
+    <img src="https://img.shields.io/badge/文档-简体中文-blue.svg" alt="简体中文文档" />
+  </a>
 </p>
 
 <p align="center">
-    <a target="_blank" href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.dromara%22%20AND%soul">
-        <img src="https://img.shields.io/maven-central/v/org.dromara/soul.svg?label=maven%20central" />
+    <a target="_blank" href="https://search.maven.org/search?q=g:org.apache.shenyu%20AND%20a:shenyu">
+        <img src="https://img.shields.io/maven-central/v/org.apache.shenyu/shenyu.svg?label=maven%20central" />
     </a>
-    <a target="_blank" href="https://github.com/Dromara/soul/blob/master/LICENSE">
+    <a target="_blank" href="https://github.com/apache/shenyu/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?label=license" />
     </a>
     <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">
         <img src="https://img.shields.io/badge/JDK-8+-green.svg" />
     </a>
-    <a target="_blank" href="https://github.com/dromara/soul">
-        <img src="https://github.com/dromara/soul/workflows/ci/badge.svg" />
+    <a target="_blank" href="https://github.com/apache/shenyu/actions">
+        <img src="https://github.com/apache/shenyu/workflows/ci/badge.svg" />
     </a>
-    <a href="https://www.codacy.com/app/yu199195/soul?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Dromara/soul&amp;utm_campaign=Badge_Grade">
-        <img src="https://api.codacy.com/project/badge/Grade/4367ffad5b434b7e8078b3a68cc6398d"/>
-    </a>
-    <a target="_blank" href='https://gitee.com/dromara/soul/stargazers'>
-        <img src='https://gitee.com/dromara/soul/badge/star.svg?theme=gvp' alt='gitee stars'/>
+   <a target="_blank" href='https://github.com/apache/shenyu'>
+        <img src="https://img.shields.io/github/forks/apache/shenyu.svg" alt="github forks"/>
    </a>
-   <a target="_blank" href='https://github.com/dromara/soul'>
-        <img src="https://img.shields.io/github/forks/dromara/soul.svg" alt="github forks"/>
+   <a target="_blank" href='https://github.com/apache/shenyu'>
+        <img src="https://img.shields.io/github/stars/apache/shenyu.svg" alt="github stars"/>
    </a>
-   <a target="_blank" href='https://github.com/dromara/soul'>
-        <img src="https://img.shields.io/github/stars/dromara/soul.svg" alt="github stars"/>
+   <a target="_blank" href='https://github.com/apache/shenyu'>
+        <img src="https://img.shields.io/github/contributors/apache/shenyu.svg" alt="github contributors"/>
    </a>
-   <a target="_blank" href='https://github.com/dromara/soul'>
-        <img src="https://img.shields.io/github/contributors/dromara/soul.svg" alt="github contributors"/>
-   </a>     
-   <a href="https://github.com/Dromara/soul">
-        <img src="https://tokei.rs/b1/github/Dromara/soul?category=lines"/>
+   <a target="_blank" href="https://codecov.io/gh/apache/shenyu">
+        <img src="https://codecov.io/gh/apache/shenyu/branch/master/graph/badge.svg" />
    </a>
-   <a target="_blank" href="https://codecov.io/gh/dromara/soul">
-        <img src="https://codecov.io/gh/dromara/soul/branch/master/graph/badge.svg" />
-   </a>
+  <a target="_blank" href="https://hub.docker.com/r/apache/shenyu-bootstrap/tags">
+    <image src="https://img.shields.io/docker/pulls/apache/shenyu-bootstrap" alt="Docker Pulls"/>
+  </a>
+  <a target="_blank" href="https://gitpod.io/#https://github.com/apache/shenyu">
+    <image src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod&color=green"/>
+  </a>
 </p>
 <br/>
 
---------------------------------------------------------------------------------
+---
 
 # Architecture
  
- ![](https://yu199195.github.io/images/soul/soul-framework.png)  
+ ![](https://shenyu.apache.org/img/architecture/shenyu-architecture-3d.png)  
  
--------------------------------------------------------------------------------- 
-  
-# Mind maps
- 
- ![](https://dromara.org/img/soul/activite/soul-xmind.png)
- 
---------------------------------------------------------------------------------  
-  
-# Modules
+---- 
 
- * soul-admin : plugins and other configuration information management background
- 
- * soul-bootstrap : with the startup project, users can refer to
- 
- * soul-client : user fast access with Spring MVC, Dubbo, Spring Cloud.
-  
- * soul-common : framework common class
- 
- * soul-disruptor : based on disruptor Enclosure
- 
- * soul-register-center : rpc type register for soul-client
- 
- * soul-dist : build project
+# Why named Apache ShenYu
 
- * soul-metrics : metrics impl by prometheus.
- 
- * soul-plugin : Soul provider plugin collection.
- 
- * soul-spi : Soul spi define.
- 
- * soul-spring-boot-starter : support for the spring boot starter
- 
- * soul-sync-data-center : provider ZooKeeper, HTTP, WebSocket, Nacos to sync data
- 
- * soul-examples : the RPC examples project
- 
- * soul-web : core processing packages including plugins, request routing and forwarding, and so on
- 
---------------------------------------------------------------------------------   
- 
+ShenYu (神禹) is the honorific name of Chinese ancient monarch Xia Yu (also known in later times as Da Yu), 
+who left behind the touching story of the three times he crossed the Yellow River for the benefit of the people and successfully managed the flooding of the river. 
+He is known as one of the three greatest kings of ancient China, along with Yao and Shun.
+
+   * Firstly, the name ShenYu is to promote the traditional virtues of our Chinese civilisation.
+
+   * Secondly, the most important thing about the gateway is the governance of the traffic.
+
+   * Finally, the community will do things in a fair, just, open and meritocratic way, paying tribute to ShenYu while also conforming to the Apache Way.
+
+--- 
+
 # Features
 
-   * Soul provides ability such as current limiting, fusing, forwarding, routing monitoring and so on by its plugins.
+* Proxy: Support for Apache® Dubbo™, Spring Cloud, gRPC, Motan, SOFA, TARS, WebSocket, MQTT
+* Security: Sign, OAuth 2.0, JSON Web Tokens, WAF plugin
+* API governance: Request, response, parameter mapping, Hystrix, RateLimiter plugin
+* Observability: Tracing, metrics, logging plugin
+* Dashboard: Dynamic traffic control, visual backend for user menu permissions
+* Extensions: Plugin hot-swapping, dynamic loading
+* Cluster: NGINX, Docker, Kubernetes
+* Language: provides .NET, Python, Go, Java client for API register
    
-   * Support HTTP, RESTFul, WebSocket, Dubbo, GRPC, Tars and Spring Cloud Proxy.
-   
-   * Plug-in hot plug, users can customize the development.
-   
-   * Selectors and rules are dynamically configured for flexible matching.
+---  
 
-   * Support for cluster deployment.
-   
-   * Support A/B test and grayscale publishing.
-   
---------------------------------------------------------------------------------  
- 
+# Quick Start (docker)
+
+### Create network for Shenyu
+
+```
+> docker network create shenyu
+```
+
+### Run Apache ShenYu Admin
+
+```
+> docker pull apache/shenyu-admin
+> docker run -d --name shenyu-admin-quickstart -p 9095:9095 --net shenyu apache/shenyu-admin
+```
+
+### Run Apache ShenYu Bootstrap
+
+```
+> docker pull apache/shenyu-bootstrap
+> docker run -d --name shenyu-quickstart -p 9195:9195 -e "shenyu.local.enabled=true" -e SHENYU_SYNC_WEBSOCKET_URLS=ws://shenyu-admin-quickstart:9095/websocket --net shenyu apache/shenyu-bootstrap
+```                       
+
+### Set router
+
+* Real request  ：http://127.0.0.1:8080/helloworld,
+
+```json
+{
+  "name" : "Shenyu",
+  "data" : "hello world"
+}
+```
+
+* Set routing rules (Standalone)
+
+Add `localKey: 123456` to Headers. If you need to customize the localKey, you can use the sha512 tool to generate the key based on plaintext and update the `shenyu.local.sha512Key` property.
+
+```
+curl --location --request POST 'http://localhost:9195/shenyu/plugin/selectorAndRules' \
+--header 'Content-Type: application/json' \
+--header 'localKey: 123456' \
+--data-raw '{
+    "pluginName": "divide",
+    "selectorHandler": "[{\"upstreamUrl\":\"127.0.0.1:8080\"}]",
+    "conditionDataList": [{
+        "paramType": "uri",
+        "operator": "match",
+        "paramValue": "/**"
+    }],
+    "ruleDataList": [{
+        "ruleHandler": "{\"loadBalance\":\"random\"}",
+        "conditionDataList": [{
+            "paramType": "uri",
+            "operator": "match",
+            "paramValue": "/**"
+        }]
+    }]
+}'
+```
+
+* Proxy request ：http://localhost:9195/helloworld 
+
+```json
+{
+  "name" : "Shenyu",
+  "data" : "hello world"
+}
+```
+---
+
 # Plugin
 
- Whenever a request comes in, Soul will execute it by all enabled plugins through the chain of responsibility.
+ Whenever a request comes in, Apache ShenYu will execute it by all enabled plugins through the chain of responsibility.
  
- As the heart of Soul, plugins are extensible and hot-pluggable.
+ As the heart of Apache ShenYu, plugins are extensible and hot-pluggable.
  
  Different plugins do different things.
  
  Of course, users can also customize plugins to meet their own needs.
  
- If you want to customize, see [custom-plugin](https://dromara.org/projects/soul/custom-plugin/)
+ If you want to customize, see [custom-plugin](https://shenyu.apache.org/docs/developer/custom-plugin/) .
  
---------------------------------------------------------------------------------  
+---  
  
-# Selector & rule 
+# Selector & Rule 
 
   According to your HTTP request headers, selectors and rules are used to route your requests.
   
@@ -135,135 +180,41 @@
   
   The selector and the rule match only once, and the match is returned. So the coarsest granularity should be sorted last.
  
---------------------------------------------------------------------------------  
+---  
    
 # Data Caching & Data Sync
  
   Since all data have been cached using ConcurrentHashMap in the JVM, it's very fast.
   
-  When user have changed the configuration in the background management, Soul wiil dynamically updates its cache by listening to the ZooKeeper node, WebSocket push, HTTP longPull.
+  Apache ShenYu dynamically updates the cache by listening to the ZooKeeper node (or WebSocket push, HTTP long polling) when the user changes configuration information in the background management.
   
-  ![](https://yu199195.github.io/images/soul/soul-config-processor.png)
+  ![](https://shenyu.apache.org/img/shenyu/dataSync/shenyu-config-processor-en.png)
   
-  ![](https://yu199195.github.io/images/soul/config-strage-processor.png)
+  ![](https://shenyu.apache.org/img/shenyu/dataSync/config-strategy-processor-en.png)
 
---------------------------------------------------------------------------------    
+---    
 
 # Prerequisite
  
-   * JDK 1.8+
+   * JDK 17+
    
---------------------------------------------------------------------------------     
-   
-# About
-  
-   Soul has been used widely in more and more systems in many companies, and it's simple and convenient to integrate Services/APIs with the high performance and flexibility.
-   
-   In double eleven online shopping carnival of China, Soul clusters successfully supported a large volume of internet business.
-   
---------------------------------------------------------------------------------  
-    
-# Document & Website
-
-[![EN doc](https://img.shields.io/badge/document-English-blue.svg)](https://dromara.org/projects/soul/overview)
-[![CN doc](https://img.shields.io/badge/document-Chinese-blue.svg)](https://dromara.org/zh/projects/soul/overview)
-  
---------------------------------------------------------------------------------  
+--- 
         
 # Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/Dromara/soul.svg)](https://starchart.cc/Dromara/soul)
+[![Stargazers over time](https://starchart.cc/apache/shenyu.svg)](https://starchart.cc/apache/shenyu.svg)
 
---------------------------------------------------------------------------------  
+---  
+
+# Contributor and Support
+
+* [How to Contribute](https://shenyu.apache.org/community/contributor-guide)
+* [Mailing Lists](mailto:dev@shenyu.apache.org)
+
+---  
 
 # Known Users
 
-In order of registration, More access companies are welcome to register at [https://github.com/Dromara/soul/issues/68](https://github.com/Dromara/soul/issues/68) (For open source users only)
+In order of registration, More access companies are welcome to register at [https://github.com/apache/shenyu/issues/68](https://github.com/apache/shenyu/issues/68) (For open source users only) .
 
-<table>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/joyy.png"  width="1800" height="90" alt="yy"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/mihoyo.jpg"  width="1800" height="90" alt="mihoyo"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/keking.png"  width="1800" height="90" alt="kk group"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/shansong.jpg"  width="1800" height="90" alt="shansong"/>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/sibu.jpg"  width="1800" height="90" alt="sibu group"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/guojiadianwang.jpg"  width="1800" height="90" alt="guojiadianwang"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/caibeike.png"  width="1800" height="90" alt="caibeike"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/jiangsuyonggang.jpg"  width="1800" height="90" alt="jiangsuyonggang"/>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/fangfutong.png"  width="1800" height="90" alt="fangfutong"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/lixiang.jpg"  width="1800" height="90" alt="lixiang"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/kaipuyun.png"  width="1800" height="90" alt="kaipuyun"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/songda.png"  width="1800" height="90" alt="songda"/>
-     </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/aoyou.jpg"  width="1800" height="90" alt="aoyou"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/cheyipai.jpg"  width="1800" height="90" alt="cheyipai"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/caomao.jpg"  width="1800" height="90" alt="caomao"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/zuyun.jpg"  width="1800" height="90" alt="zuyun"/>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/hezhi.png"  width="1800" height="90" alt="hezhi"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/qidianyun.jpg"  width="1800" height="90" alt="qidianyun"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/wanwei.gif"  width="1800" height="90" alt="wanwei"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/wuyiyuntong.jpg"  width="1800" height="90" alt="wuyiyuntong"/>
-    </tr>            
-  </tbody>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/soul/users/haokangzaijia.jpg"  width="1800" height="90" alt="haokangzaijia"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/caissa.jpg"  width="1800" height="90" alt="caissa"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/deepBule.png"  width="1800" height="90" alt="deepBule"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/anka.png"  width="1800" height="90" alt="anka"/>
-    </tr>
-  </tbody>     
-  <tbody>
-    <tr>
-      <td><img src="https://dromara.org/img/users/jd_logo.png"  width="1800" height="90" alt="jd"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/minglamp.jpeg"  width="1800" height="90" alt="minglamp"/>
-      <td><img src="https://yu199195.github.io/images/soul/users/webuy.jpg"  width="1800" height="90" alt="webuy"/>
-      <td><img src="https://dromara.org/img/users/cass.png"  width="1800" height="90" alt="cass"/>
-    </tr>
-  </tbody> 
-  <tbody>
-    <tr>
-      <td><img src="https://dromara.org/img/users/songguo.png"  width="1800" height="90" alt="songguo"/>
-      <td><img src="https://dromara.org/img/users/lianlian.png"  width="1800" height="90" alt="lianlian"/>
-      <td><img src="https://dromara.org/img/users/dasouche.png"  width="1800" height="90" alt="dasouche"/>
-      <td><img src="https://dromara.org/img/users/weimai.png"  width="1800" height="90" alt="weimai"/>
-    </tr>
-  </tbody> 
-</table>
-
-# Support  
-
-<table>
-  <thead>
-    <th>WeChat</th>
-    <th>QQ</th>
-    <th>Taro Source</th>
-    <th>JetBrains</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="https://yu199195.github.io/images/public.jpg"   alt="WeChat"/>
-      <td><img src="https://yu199195.github.io/images/soul-qq.png"  alt="QQ group"/>
-      <td><img src="http://www.iocoder.cn/images/common/erweima.jpg"  alt="yuNai"/>
-      <td><img src="https://yu199195.github.io/images/jetbrains.svg"  alt="Jetbrains"/>
-    </tr>
-  </tbody>
-</table>
-  
- 
+All Users : [Known Users](https://shenyu.apache.org/community/user-registration)
