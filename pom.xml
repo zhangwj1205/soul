@@ -15,162 +15,230 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.apache</groupId>
+        <artifactId>apache</artifactId>
+        <version>21</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.dromara</groupId>
-    <artifactId>soul</artifactId>
+    <groupId>org.apache.shenyu</groupId>
+    <artifactId>shenyu</artifactId>
     <packaging>pom</packaging>
-    <version>2.3.1-SNAPSHOT</version>
-    <name>soul</name>
+    <version>2.7.1-SNAPSHOT</version>
+    <name>shenyu</name>
     <modules>
-        <module>soul-admin</module>
-        <module>soul-common</module>
-        <module>soul-web</module>
-        <module>soul-spring-boot-starter</module>
-        <module>soul-bootstrap</module>
-        <module>soul-client</module>
-        <module>soul-plugin</module>
-        <module>soul-sync-data-center</module>
-        <module>soul-metrics</module>
-        <module>soul-spi</module>
-        <module>soul-register-center</module>
-        <module>soul-dist</module>
-        <module>soul-disruptor</module>
+        <module>shenyu-admin</module>
+        <module>shenyu-admin-listener</module>
+        <module>shenyu-common</module>
+        <module>shenyu-web</module>
+        <module>shenyu-spring-boot-starter</module>
+        <module>shenyu-bootstrap</module>
+        <module>shenyu-client</module>
+        <module>shenyu-plugin</module>
+        <module>shenyu-sync-data-center</module>
+        <module>shenyu-spi</module>
+        <module>shenyu-register-center</module>
+        <module>shenyu-disruptor</module>
+        <module>shenyu-protocol</module>
+        <module>shenyu-loadbalancer</module>
+        <module>shenyu-dist</module>
+        <module>shenyu-alert</module>
+        <module>shenyu-sdk</module>
+        <module>shenyu-discovery</module>
+        <module>shenyu-registry</module>
+        <module>shenyu-kubernetes-controller</module>
     </modules>
-
-    <organization>
-        <name>dromara</name>
-        <url>http://www.dromara.org</url>
-    </organization>
 
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <scm>
-        <url>https://github.com/Dromara/soul.git</url>
-        <connection>scm:git:https://github.com/Dromara/soul</connection>
-        <developerConnection>scm:git:git@github.com:Dromara/soul</developerConnection>
-        <tag>${project.version}</tag>
+        <url>https://github.com/apache/shenyu</url>
+        <connection>scm:git:https://github.com/apache/shenyu.git</connection>
+        <developerConnection>scm:git:https://github.com/apache/shenyu.git</developerConnection>
+        <tag>v2.5.0</tag>
     </scm>
+
+    <mailingLists>
+        <mailingList>
+            <name>Apache ShenYu Developer List</name>
+            <post>dev@shenyu.apache.org</post>
+            <subscribe>dev-subscribe@shenyu.apache.org</subscribe>
+            <unsubscribe>dev-unsubscribe@shenyu.apache.org</unsubscribe>
+        </mailingList>
+    </mailingLists>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/Dromara/soul/issues</url>
+        <url>https://github.com/apache/shenyu/issues</url>
     </issueManagement>
 
-    <developers>
-        <developer>
-            <id>xiaoyu</id>
-            <name>xiaoyu(Myth)</name>
-            <email>xiaoyu@apache.org</email>
-            <organization>org.dromara</organization>
-            <roles>
-                <role>author</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-    </parent>
-
     <properties>
-        <java.version>1.8</java.version>
-        <hutool.version>4.0.8</hutool.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jasypt.version>1.9.2</jasypt.version>
-        <lombok.version>1.18.12</lombok.version>
-        <springfox.version>2.6.1</springfox.version>
-        <mybatis.starter.version>1.1.1</mybatis.starter.version>
-        <mysql.version>8.0.11</mysql.version>
-        <druid.version>1.0.29</druid.version>
-        <commons-lang3.version>3.3.2</commons-lang3.version>
-        <guava.version>[30.1-jre,)</guava.version>
-        <commons-collections4.version>4.1</commons-collections4.version>
-        <reactor-spring.version>1.0.1.RELEASE</reactor-spring.version>
-        <disruptor.version>3.4.0</disruptor.version>
-        <hessian.version>4.0.38</hessian.version>
-        <protostuff.version>1.0.8</protostuff.version>
-        <kryo.version>4.0.0</kryo.version>
-        <pagehelper.version>5.1.2</pagehelper.version>
-        <alibaba.dubbo.version>2.6.5</alibaba.dubbo.version>
-        <apache.dubbo.version>2.7.5</apache.dubbo.version>
-        <gson.version>2.8.0</gson.version>
-        <okhttp.version>3.7.0</okhttp.version>
-        <mapstruct.version>1.3.1.Final</mapstruct.version>
-        <prometheus-java-client.version>0.10.0</prometheus-java-client.version>
-        <prometheus-jmx.version>0.15.0</prometheus-jmx.version>
-        <frontend.plugin.skip>true</frontend.plugin.skip>
-        <swagger.version>2.9.2</swagger.version>
-        <sofa.rpc.version>5.7.6</sofa.rpc.version>
-        <tars.version>1.7.2</tars.version>
         <skipTests>false</skipTests>
-        <undertow.version>2.2.2.Final</undertow.version>
-        <curator-test.version>3.3.0</curator-test.version>
-        <wiremock.version>2.18.0</wiremock.version>
-        <zookeeper.version>3.5.6</zookeeper.version>
-        <zkclient.version>0.10</zkclient.version>
-        <shiro.version>1.7.0</shiro.version>
-        <jwt.version>3.12.0</jwt.version>
-        <!--maven plugin version-->
+        <!-- maven plugin version start -->
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-        <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
-        <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
-        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
-        <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.4.0</maven-checkstyle-plugin.version>
+        <apache-rat-plugin.version>0.15</apache-rat-plugin.version>
         <frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
         <frontend-maven-plugin.node.version>v12.14.1</frontend-maven-plugin.node.version>
+        <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
+        <docker-maven-plugin.version>0.40.1</docker-maven-plugin.version>
+        <maven-assembly-plugin.version>3.5.0</maven-assembly-plugin.version>
+        <!-- maven plugin version end -->
+
+        <!-- dependency version start -->
+        <jasypt.version>1.9.2</jasypt.version>
+        <mybatis.starter.version>3.0.3</mybatis.starter.version>
+        <mysql.version>8.3.0</mysql.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <guava.version>32.0.0-jre</guava.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <disruptor.version>3.4.0</disruptor.version>
+        <consul.api.version>1.4.5</consul.api.version>
+        <consul.version>2.2.6.RELEASE</consul.version>
+        <hessian.version>4.0.38</hessian.version>
+        <protostuff.version>1.0.8</protostuff.version>
+        <kryo.version>4.0.0</kryo.version>
+        <pagehelper.version>5.3.3</pagehelper.version>
+        <apache.dubbo.version>3.2.14</apache.dubbo.version>
+        <gson.version>2.9.0</gson.version>
+        <okhttp.version>4.9.3</okhttp.version>
+        <prometheus-java-client.version>0.15.0</prometheus-java-client.version>
+        <prometheus-jmx.version>0.15.0</prometheus-jmx.version>
+        <springdoc.version>2.5.0</springdoc.version>
+        <sofa.rpc.version>5.13.0</sofa.rpc.version>
+        <sofa-common-tools.version>2.1.1</sofa-common-tools.version>
+        <tars.version>1.7.2</tars.version>
+        <curator.version>5.7.0</curator.version>
+        <wiremock.version>3.0.1</wiremock.version>
+        <zookeeper.version>3.9.2</zookeeper.version>
+        <zkclient.version>0.10</zkclient.version>
+        <shiro.version>1.13.0</shiro.version>
+        <jwt.version>3.12.0</jwt.version>
+        <motan.version>1.2.1</motan.version>
+        <spring-boot.version>3.3.1</spring-boot.version>
+        <aspectjweaver.version>1.9.6</aspectjweaver.version>
+        <h2.version>1.4.200</h2.version>
+        <jetcd-core.version>0.7.3</jetcd-core.version>
         <java-websocket.version>1.5.0</java-websocket.version>
-        <mockito.version>3.5.15</mockito.version>
-        <nacos-client.version>2.0.0</nacos-client.version>
+        <mockito.version>5.11.0</mockito.version>
+        <awaitility.version>4.0.3</awaitility.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <nacos-client.version>2.2.4</nacos-client.version>
+        <spring-security.version>6.3.0</spring-security.version>
+        <grpc.version>1.65.1</grpc.version>
+        <rocketmq-client.version>4.9.3</rocketmq-client.version>
+        <pulsar-client.version>2.10.1</pulsar-client.version>
+        <lz4-java.version>1.8.0</lz4-java.version>
+        <elasticsearch-java.version>8.2.3</elasticsearch-java.version>
+        <jackson-databind.version>2.15.3</jackson-databind.version>
+        <jakarta.json-api.version>2.0.1</jakarta.json-api.version>
+        <elasticsearch-rest-client.version>8.2.3</elasticsearch-rest-client.version>
+        <kafka-clients.version>3.7.1</kafka-clients.version>
+        <amqp-client.version>5.16.0</amqp-client.version>
+        <clickhouse-http-client.version>0.3.2-patch11</clickhouse-http-client.version>
+        <eureka.version>2.0.2</eureka.version>
+        <javatuples.version>1.2</javatuples.version>
+        <k8s-client.version>17.0.2</k8s-client.version>
+        <polaris.version>1.13.0</polaris.version>
+        <bytebuddy.version>1.14.11</bytebuddy.version>
+        <spring-ldap.version>2.3.4.RELEASE</spring-ldap.version>
+        <jaxb.api.version>2.3.1</jaxb.api.version>
+        <mail-api.version>2.1.3</mail-api.version>
+        <mail.version>2.0.1</mail.version>
+        <ojdbc8.version>19.3.0.0</ojdbc8.version>
+        <spring-cloud-commons.version>4.1.2</spring-cloud-commons.version>
+        <spring-cloud.version>4.1.2</spring-cloud.version>
+        <log4j-1.2-api.vetsion>2.17.2</log4j-1.2-api.vetsion>
+        <caffeine.version>2.9.3</caffeine.version>
+        <httpasyncclient.version>4.1.5</httpasyncclient.version>
+        <asm.version>9.2</asm.version>
+        <apollo.version>2.1.0</apollo.version>
+        <resilience.version>1.7.1</resilience.version>
+        <sentinel.version>1.8.3</sentinel.version>
+        <lettuce.version>6.1.2.RELEASE</lettuce.version>
+        <protobuf-java.version>3.25.5</protobuf-java.version>
+        <aliyun-log-producer.version>0.3.10</aliyun-log-producer.version>
+        <tencent-log-sdk.version>1.0.14</tencent-log-sdk.version>
+        <jsonpath.version>2.4.0</jsonpath.version>
+        <casdoor-java-sdk.version>1.9.0</casdoor-java-sdk.version>
+        <huawei-log-sdk.version>1.0.1</huawei-log-sdk.version>
+        <opengauss-jdbc.version>5.0.0-og</opengauss-jdbc.version>
+        <wasmtime-java.version>0.19.0</wasmtime-java.version>
+        <bcprov-jdk18on.version>1.78</bcprov-jdk18on.version>
+        <oceanbase.version>2.4.12</oceanbase.version>
+        <!-- dependency version end -->
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-processor</artifactId>
-                <version>${mapstruct.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${mapstruct.version}</version>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm-tree</artifactId>
+                <version>${asm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy</artifactId>
+                <version>${bytebuddy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-core</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-transport-netty4</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-registry-zookeeper</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.weibo</groupId>
+                <artifactId>motan-springsupport</artifactId>
+                <version>${motan.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
             </dependency>
 
             <dependency>
@@ -190,7 +258,6 @@
                 <version>${prometheus-java-client.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/io.prometheus.jmx/collector -->
             <dependency>
                 <groupId>io.prometheus.jmx</groupId>
                 <artifactId>collector</artifactId>
@@ -207,20 +274,30 @@
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>sofa-rpc-all</artifactId>
                 <version>${sofa.rpc.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${alibaba.dubbo.version}</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
+                        <groupId>net.jcip</groupId>
+                        <artifactId>jcip-annotations</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring</artifactId>
+                        <groupId>io.grpc</groupId>
+                        <artifactId>grpc-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>grpc-api</artifactId>
+                        <groupId>io.grpc</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>grpc-protobuf</artifactId>
+                        <groupId>io.grpc</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>grpc-stub</artifactId>
+                        <groupId>io.grpc</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>grpc-netty-shaded</artifactId>
+                        <groupId>io.grpc</groupId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -238,15 +315,10 @@
             </dependency>
 
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -265,12 +337,6 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${commons-collections4.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectreactor</groupId>
-                <artifactId>reactor-spring</artifactId>
-                <version>${reactor-spring.version}</version>
             </dependency>
 
             <dependency>
@@ -299,12 +365,31 @@
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>log4j</artifactId>
+                        <groupId>log4j</groupId>
+                    </exclusion>
+                </exclusions>
                 <version>${zookeeper.version}</version>
             </dependency>
+
             <dependency>
-                <groupId>com.101tec</groupId>
-                <artifactId>zkclient</artifactId>
-                <version>${zkclient.version}</version>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-openapi</artifactId>
+                <version>${apollo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.tencent.polaris</groupId>
+                <artifactId>polaris-all</artifactId>
+                <version>${polaris.version}</version>
             </dependency>
 
             <dependency>
@@ -314,15 +399,9 @@
             </dependency>
 
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.version}</version>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
             </dependency>
 
             <dependency>
@@ -336,6 +415,180 @@
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos-client.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>jakarta.mail</groupId>
+                <artifactId>jakarta.mail-api</artifactId>
+                <version>${mail-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>jakarta.mail</artifactId>
+                <version>${mail.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-test</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.oracle.ojdbc</groupId>
+                <artifactId>ojdbc8</artifactId>
+                <version>${ojdbc8.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-commons</artifactId>
+                <version>${spring-cloud-commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-context</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch-rest-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.json</groupId>
+                <artifactId>jakarta.json-api</artifactId>
+                <version>${jakarta.json-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.etcd</groupId>
+                <artifactId>jetcd-core</artifactId>
+                <version>${jetcd-core.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>grpc-protobuf</artifactId>
+                        <groupId>io.grpc</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>grpc-stub</artifactId>
+                        <groupId>io.grpc</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.grpc</groupId>
+                        <artifactId>grpc-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>grpc-netty</artifactId>
+                        <groupId>io.grpc</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-core</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>grpc-protobuf</artifactId>
+                <groupId>io.grpc</groupId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>grpc-stub</artifactId>
+                <groupId>io.grpc</groupId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>grpc-netty</artifactId>
+                <groupId>io.grpc</groupId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>grpc-okhttp</artifactId>
+                <groupId>io.grpc</groupId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.netflix.eureka</groupId>
+                <artifactId>eureka-client</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.kubernetes</groupId>
+                <artifactId>client-java-spring-integration</artifactId>
+                <version>${k8s-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka-clients.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.kawamuray.wasmtime</groupId>
+                <artifactId>wasmtime-java</artifactId>
+                <version>${wasmtime-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>${bcprov-jdk18on.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.oceanbase</groupId>
+                <artifactId>oceanbase-client</artifactId>
+                <version>${oceanbase.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -343,6 +596,12 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.re2j</groupId>
+                    <artifactId>re2j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -354,13 +613,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -370,107 +629,24 @@
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
+            <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-inline</artifactId>
+            <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>${awaitility.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-classic</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-    <profiles>
-        <profile>
-            <id>soul-dashboard</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <frontend.plugin.skip>false</frontend.plugin.skip>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>${exec-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>git submodule update</id>
-                                <phase>initialize</phase>
-                                <inherited>false</inherited>
-                                <configuration>
-                                    <executable>git</executable>
-                                    <arguments>
-                                        <argument>submodule</argument>
-                                        <argument>update</argument>
-                                        <argument>--init</argument>
-                                        <argument>--recursive</argument>
-                                    </arguments>
-                                </configuration>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>release</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-staging-maven-plugin.version}</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven-gpg-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
     <build>
         <plugins>
@@ -500,8 +676,10 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
-                    <aggregate>true</aggregate>
+                    <source>${java.version}</source>
                     <sourcepath>src/main/java</sourcepath>
+                    <detectJavaApiLink>false</detectJavaApiLink>
+                    <detectOfflineLinks>false</detectOfflineLinks>
                 </configuration>
                 <executions>
                     <execution>
@@ -521,6 +699,9 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -542,7 +723,9 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
-                    <configLocation>/script/soul_checkstyle.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <configLocation>/script/shenyu_checkstyle.xml</configLocation>
+                    <headerLocation>/script/checkstyle-header.txt</headerLocation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <excludes>**/transfer/**/*</excludes>
                 </configuration>
@@ -590,7 +773,6 @@
                         <exclude>**/spring.factories</exclude>
                         <exclude>**/spring.provides</exclude>
                         <exclude>/script/**</exclude>
-                        <exclude>**/lombok.config</exclude>
                         <exclude>**/*.json</exclude>
                         <!-- IDE files -->
                         <exclude>**/*.iml</exclude>
@@ -610,15 +792,23 @@
                         <exclude>**/.mvn/wrapper/maven-wrapper.properties</exclude>
                         <!-- GitHub files -->
                         <exclude>**/.github/**</exclude>
+                        <!-- Gitpod files -->
+                        <exclude>**/.gitpod.yml</exclude>
                         <!-- document files -->
                         <exclude>**/*.md</exclude>
                         <excldue>**/*.MD</excldue>
-                        <excldue>**/*.conf</excldue>
-                        <excldue>**/*.tars</excldue>
                         <exclude>**/*.txt</exclude>
                         <exclude>**/docs/**</exclude>
                         <!-- UI files -->
-                        <exclude>/soul-dashboard/**</exclude>
+                        <exclude>**/.babelrc</exclude>
+                        <exclude>**/.editorconfig</exclude>
+                        <exclude>**/.eslintignore</exclude>
+                        <exclude>**/assets/**</exclude>
+                        <exclude>**/dist/**</exclude>
+                        <exclude>**/etc/**</exclude>
+                        <exclude>**/node/**</exclude>
+                        <exclude>**/node_modules/**</exclude>
+                        <exclude>**/test/coverage/**</exclude>
                         <exclude>**/resources/static/</exclude>
                     </excludes>
                 </configuration>
